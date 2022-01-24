@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="login($event)">
+  <h1>
+    Login
+  </h1>
+  <input placeholder="email" formControlName="email" matInput type="email">
+  <input placeholder="password" formControlName="password" matInput type="password">
+  
+  <button type="submit" [disabled]="!form.valid">Ingresar con Api</button>
+  
+</form>

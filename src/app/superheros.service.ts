@@ -31,6 +31,7 @@ export class SuperherosService {
   }
 
   private handleError(error: HttpErrorResponse){
+    //console.log('Error service: ', error); .status etc etc
     let message = 'Whoops! Por favor intentar nuevamente.';
     return throwError(message);
   }
