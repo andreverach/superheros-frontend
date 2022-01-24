@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiV1: 'http://127.0.0.1:8000/api/v1/',
+  apiV1: 'http://127.0.0.1:8000/api',
 };
 
 /*

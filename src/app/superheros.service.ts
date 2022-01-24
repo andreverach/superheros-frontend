@@ -19,7 +19,7 @@ export class SuperherosService {
     //si la tipo los datos que me aparecerian seria del modelo, entonces sin tipar podria hacer un 
     //result:any desde el component para poder acceder hasta ese resultado
   getSuperheros() : Observable<Superhero[]>{
-    const url = `${environment.apiV1}heros`;
+    const url = `${environment.apiV1}/v1/heros`;
     return this.httpClient.get(url)
     .pipe(
       retry(3),

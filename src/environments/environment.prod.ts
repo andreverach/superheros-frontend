@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiV1: 'http://superheros.andrevera.com/backend/api',
 };

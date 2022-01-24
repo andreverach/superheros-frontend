@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { TokenService } from './token.service';
 
 @Injectable({
@@ -18,8 +19,9 @@ export class AuthService {
 
   //metodo para obtener el token del usuario autenticado
   login(email: string, password: string){
+    const url = `${environment.apiV1}/login`;
     let name = 'Superhero';
-    return this.httpCliente.post('http://127.0.0.1:8000/api/login', {
+    return this.httpCliente.post(url, {
       email, password, name
     })
     .pipe(
