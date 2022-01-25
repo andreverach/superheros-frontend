@@ -25,7 +25,7 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private addToken(request: HttpRequest<any>){
-    //const token = "Bearer 18|DTiuPK31YWz4dn2UJI6inrPV3Ou6CEUlmeykS70c";//+ this.tokenService.getToken();
+    //const token = "Bearer 32|lh2Q3sx0xRK7gqu3bOL9U7KjjzCdsDW1JmgEESIa";//+ this.tokenService.getToken();
     const token = "Bearer " + this.tokenService.getToken();
     console.log('Auth interceptor (addToken):', token);
     if(token){//validamos token

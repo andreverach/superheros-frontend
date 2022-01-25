@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "superheroes:build:production",
+            "firebaseProject": "superheros-920bd",
+            "firebaseHostingSite": "superheros-920bd"
+          }
         }
       }
     }

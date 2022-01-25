@@ -6,7 +6,12 @@ import { SuperheroComponent } from './superhero/superhero.component';
 
 const routes: Routes = [
   {
-    path: '',//asignamos la ruta
+    path: '',
+    redirectTo: '/superheros',
+    pathMatch: 'full'
+  },
+  {
+    path: 'superheros',//asignamos la ruta
     canActivate: [AdminGuard],
     component: SuperheroComponent,//asignamos un componente
   },

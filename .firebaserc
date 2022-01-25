@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "superheros-920bd": {
+      "hosting": {
+        "superheroes": [
+          "superheros-920bd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "superheros-920bd"
+  }
+}
