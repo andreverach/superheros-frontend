@@ -2,6 +2,21 @@
   Lista de Super Héroes
   <button (click)="logout()">Cerrar Sesión</button>
 </h1>
+<div *ngIf="info"><!-- para que no salga error de que aun no existe -->
+    <h3>
+        Perfil: {{ info.user.email }}
+    </h3>
+    <h3>
+        Héroe: {{ info.name }}
+    </h3>
+    <h3>
+        Compañia: {{ info.company.description }}
+    </h3>
+    <h2>
+        <a routerLink="/profile">Atacar</a>
+    </h2>
+</div>
+<hr />
 <table id="table-heros" class="table table-striped">
   <thead>
       <th>
@@ -30,20 +45,18 @@
       </tr>
       <tr *ngFor="let hero of heros; index as i">
         <td>  
-            <img class="img-lista" [src]="hero.image" alt="">                              
+            <img class="img-lista" [src]="'http://127.0.0.1:8000' + hero.image" alt="">                              
         </td>
         <td>
-            {{ hero.hero_name }}
+            {{ hero.id }} - {{ hero.name }}
         </td>
         <td>
-            {{ hero.actor_name }}
+            {{ hero.actor }}
         </td>
         <td>
             {{ hero.nation }}
-        </td>
-        <td>
-            {{ hero.cell_phone }}
-        </td>
+        </td>        
       </tr>
   </tbody>
 </table>
+

@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { SuperheroComponent } from './superhero/superhero.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { AttackHeroComponent } from './attack-hero/attack-hero.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SuperheroComponent,
-    LoginComponent
+    LoginComponent,
+    AttackHeroComponent
   ],
   imports: [
     BrowserModule,

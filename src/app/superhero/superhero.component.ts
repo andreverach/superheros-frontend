@@ -12,7 +12,9 @@ import { SuperherosService } from '../superheros.service';
 export class SuperheroComponent implements OnInit {
 
   heros!: Superhero[];
+  herosV2!: Superhero[];
   loading: boolean = false;
+  info!: any;
 
   constructor(
     private service: SuperherosService,
@@ -22,19 +24,29 @@ export class SuperheroComponent implements OnInit {
 
   ngOnInit(): void {
     this.showSuperheros();
+    this.showUserInfo();
   }
 
   showSuperheros(){
     this.loading = true;
     this.service.getSuperheros()
     .subscribe((result: any) => {
-      this.heros = result.heros;
+      this.heros = result.data;
       this.loading = false;
     },
     error => {
       console.log('Error in component: ', error);
       this.loading = false;//o con un pipe finalize podria hacerlo en una linea este loading
     });
+    /*this.service.getSuperherosV2()
+    .subscribe((result: any) => {
+      this.herosV2 = result.data;//la variable en este caso es data en la api
+      this.loading = false;
+    },
+    error => {
+      console.log('Error in component: ', error);
+      this.loading = false;//o con un pipe finalize podria hacerlo en una linea este loading
+    });*/
   }
 
   //el logout se puede mover al appcomponent o meter el estado de una variable isLoggedIn en el
@@ -45,5 +57,17 @@ export class SuperheroComponent implements OnInit {
       this.router.navigate(['./login']);
     }
     console.log('noo cerro sesion');
+  }
+
+
+  
+  showUserInfo(){
+    this.service.getUserInfo()
+    .subscribe((result: any) => {
+      this.info = result.hero;      
+    },
+    error => {
+      console.log('Error in component: ', error);
+    });   
   }
 }

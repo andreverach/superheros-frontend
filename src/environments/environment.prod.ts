@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiV1: 'http://superheros.andrevera.com/backend/api',
+  apiV1: 'https://superheros.andrevera.com/backend/api',
   firebase: {
     apiKey: "AIzaSyDsTcHOuxsnXJWt1jdTQ0VQEWQT9Xo_5o0",
     authDomain: "superheros-920bd.firebaseapp.com",

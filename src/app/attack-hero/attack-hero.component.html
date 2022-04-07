@@ -1,0 +1,32 @@
+<div *ngIf="information"><!-- no se muestra hasta que tome un valor -->
+  <h3>
+    Perfil: {{ information.user.email }}
+  </h3>
+  <h3>
+    Héroe: {{ information.name }}
+  </h3>
+  <h3>
+    Compañia: {{ information.company.description }}
+  </h3>
+  <h2>
+    <p>
+      Puntos de damage: {{ result }}
+    </p>
+    <p>
+      {{ error }}
+    </p>
+  </h2>
+</div>
+  <form [formGroup]="formData" (ngSubmit)="submit()">
+    <label for="enemy">Seleccionar enemigo</label>
+    <select id="enemy" formControlName="enemy">
+      <option [value]="hero.id" *ngFor="let hero of heroes; index as i">{{ hero.name }}</option>
+    </select>
+    <button type="submit">
+      Atacar
+    </button>
+  </form>  
+<hr />
+<h2>
+  <a routerLink="/superheros">Regresar</a>
+</h2>

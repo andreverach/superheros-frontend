@@ -1,8 +1,8 @@
 export interface Superhero {  
   id: string;
   image: string;
-  hero_name: string;
-  actor_name: string;
+  name: string;
+  actor: string;
   nation: string;  
   cell_phone: string;  
 }
